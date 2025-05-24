@@ -93,6 +93,12 @@ public class Player : MonoBehaviour
 
     private void HandleInput()
     {
+        if (PauseMenu.Instance.IsPaused)
+        {
+            _moveInput = Vector2.zero;
+            return;
+        }
+        
         var newMoveInput = _moveAction.ReadValue<Vector2>();
         var prevMoveInput = _moveInput;
 
