@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float _maxSpeed = 6f;
     [SerializeField] private float _acceleration = 35f;
     [SerializeField] private float _deceleration = 60f;
+    [SerializeField] private float _airAccelerationMult = 1f;
+    [SerializeField] private float _airDecelerationMult = 1f;
     [SerializeField] private float _velPower = 1.5f;
     [SerializeField] private float _jumpPower = 6f;
     [SerializeField] private float _maxFallSpeed = 15f;
@@ -136,8 +138,11 @@ public class Player : MonoBehaviour
     private void HandleMovement()
     {
         float targetSpeed = _moveInput.x * _maxSpeed;
+        float accel = _isGrounded ? _acceleration : _acceleration * _airAccelerationMult;
+        float decel = _isGrounded ? _deceleration : _deceleration * _airDecelerationMult;
+        float accelDecel = Mathf.Abs(targetSpeed) > .01f ? accel : decel;
+
         float speedDiff = targetSpeed - _rb.linearVelocityX;
-        float accelDecel = Mathf.Abs(targetSpeed) > .01f ? _acceleration : _deceleration;
 
         // Applies acceleration to speed difference.
         // The raises to set power so that the acceleration increases with higher speeds (more responsive).

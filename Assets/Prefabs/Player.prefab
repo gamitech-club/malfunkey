@@ -348,6 +348,8 @@ MonoBehaviour:
   _maxSpeed: 4
   _acceleration: 35
   _deceleration: 60
+  _airAccelerationMult: 0.2
+  _airDecelerationMult: 0.2
   _velPower: 1.5
   _jumpPower: 7.5
   _maxFallSpeed: 15
