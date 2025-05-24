@@ -1783,6 +1783,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8617688888158191500, guid: 21594be754e7f12408198a02ef83e38f, type: 3}
+      propertyPath: _maxSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8617688888158191500, guid: 21594be754e7f12408198a02ef83e38f, type: 3}
+      propertyPath: _velPower
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8617688888158191500, guid: 21594be754e7f12408198a02ef83e38f, type: 3}
+      propertyPath: _jumpPower
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8617688888158191500, guid: 21594be754e7f12408198a02ef83e38f, type: 3}
+      propertyPath: _deceleration
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8617688888158191500, guid: 21594be754e7f12408198a02ef83e38f, type: 3}
+      propertyPath: _airAccelerationMult
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8617688888158191500, guid: 21594be754e7f12408198a02ef83e38f, type: 3}
+      propertyPath: _airDecelerationMult
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8837579450735509160, guid: 21594be754e7f12408198a02ef83e38f, type: 3}
       propertyPath: m_Name
       value: Player
