@@ -345,13 +345,13 @@ MonoBehaviour:
   _groundCheckBounds:
     m_Center: {x: 0, y: -0.5, z: 0}
     m_Extent: {x: 0.43, y: 0.05, z: 0}
-  _maxSpeed: 4
+  _maxSpeed: 6
   _acceleration: 35
-  _deceleration: 60
-  _airAccelerationMult: 0.2
-  _airDecelerationMult: 0.2
-  _velPower: 1.5
-  _jumpPower: 7.5
+  _deceleration: 25
+  _airAccelerationMult: 0.1
+  _airDecelerationMult: 0.1
+  _velPower: 1.3
+  _jumpPower: 7
   _maxFallSpeed: 15
   _leftKeyLimit: -1
   _rightKeyLimit: -1
