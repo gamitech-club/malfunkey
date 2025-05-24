@@ -34,6 +34,12 @@ public class Player : MonoBehaviour
 
     public Rigidbody2D Rigidbody => _rb;
     public Vector2 MoveInput => _moveInput;
+    public int LeftKeyAvailable => _leftKeyAvailable;
+    public int RightKeyAvailable => _rightKeyAvailable;
+    public int JumpAvailable => _jumpAvailable;
+    public int PoundAvailable => _poundAvailable;
+    public bool IsJumpKeyPressed => _jumpAction.IsPressed();
+    public bool IsPoundKeyPressed => _poundAction.IsPressed();
 
     // Input
     private InputAction _moveAction;

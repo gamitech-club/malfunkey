@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b012f2bf7e46ef459ea32e7820ffef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 8617688888158191500}
   _keyLeft: {fileID: 2476577141956145345}
   _keyDown: {fileID: 410278240060468179}
   _keyUp: {fileID: 3700747815340989857}
