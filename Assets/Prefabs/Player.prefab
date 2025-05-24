@@ -391,8 +391,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0, g: 0.6715784, b: 1, a: 1}
+  m_Sprite: {fileID: -7554498494277832466, guid: 2a9ca9e2b84a63c438a02808c08ecc85, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -413,6 +413,7 @@ GameObject:
   - component: {fileID: 8461486046343837502}
   - component: {fileID: 2402136646139274481}
   - component: {fileID: 7710178253285872220}
+  - component: {fileID: 4867722782137010079}
   - component: {fileID: 8617688888158191500}
   - component: {fileID: 2521440282457150281}
   m_Layer: 3
@@ -474,17 +475,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.48512512}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1.75, y: 2.3125}
+    newSize: {x: 1.75, y: 2.3125}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.6310345, y: 0.94741714}
   m_EdgeRadius: 0
 --- !u!50 &7710178253285872220
 Rigidbody2D:
@@ -513,6 +514,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!95 &4867722782137010079
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8837579450735509160}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 15b94a2793cb29b4c9341e097725a920, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &8617688888158191500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,8 +553,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _groundCheckBounds:
-    m_Center: {x: 0, y: -0.5, z: 0}
-    m_Extent: {x: 0.43, y: 0.05, z: 0}
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0.25, y: 0.05, z: 0}
   _maxSpeed: 6
   _acceleration: 35
   _deceleration: 25
@@ -557,6 +580,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 8617688888158191500}
+  _animator: {fileID: 4867722782137010079}
+  _sprite: {fileID: 7467658751437327770}
   _sfxJump: {fileID: 3143667734041813410}
 --- !u!1001 &702292394218667230
 PrefabInstance:

@@ -1749,7 +1749,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8461486046343837502, guid: 21594be754e7f12408198a02ef83e38f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.19
       objectReference: {fileID: 0}
     - target: {fileID: 8461486046343837502, guid: 21594be754e7f12408198a02ef83e38f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1783,22 +1783,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8617688888158191500, guid: 21594be754e7f12408198a02ef83e38f, type: 3}
-      propertyPath: _jumpLimit
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8617688888158191500, guid: 21594be754e7f12408198a02ef83e38f, type: 3}
-      propertyPath: _poundLimit
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8617688888158191500, guid: 21594be754e7f12408198a02ef83e38f, type: 3}
-      propertyPath: _leftKeyLimit
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8617688888158191500, guid: 21594be754e7f12408198a02ef83e38f, type: 3}
-      propertyPath: _rightKeyLimit
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8837579450735509160, guid: 21594be754e7f12408198a02ef83e38f, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1829,9 +1813,9 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1361932381864180511}
+  - {fileID: 5385341731514620523}
   - {fileID: 478499024}
   - {fileID: 1332588297}
-  - {fileID: 5385341731514620523}
   - {fileID: 36245465}
   - {fileID: 1770875504}
   - {fileID: 1347537383}
