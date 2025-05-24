@@ -92,13 +92,6 @@ public class Player : MonoBehaviour
         var newMoveInput = _moveAction.ReadValue<Vector2>();
         var prevMoveInput = _moveInput;
 
-        // Jumping
-        if (_jumpAction.WasPerformedThisFrame() && _isGrounded)
-        {
-            if (_jumpAvailable == -1 || _jumpAvailable > 0)
-                Jump();
-        }
-
         // Checking if left & right key just released
         if (newMoveInput.x == 0 && !_isInCharging)
         {
@@ -117,7 +110,14 @@ public class Player : MonoBehaviour
         // Horizontal movement
         _moveInput = newMoveInput;
 
-        // Pound
+        // Jumping
+        if (_jumpAction.WasPerformedThisFrame() && _isGrounded)
+        {
+            if (_jumpAvailable == -1 || _jumpAvailable > 0)
+                Jump();
+        }
+
+        // Pounding
         if (_poundAction.WasPerformedThisFrame() && !_isGrounded)
         {
             if (_poundAvailable == -1 || _poundAvailable > 0)
