@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float _deceleration = 60f;
     [SerializeField] private float _velPower = 1.5f;
     [SerializeField] private float _jumpPower = 6f;
+    [SerializeField] private float _maxFallSpeed = 15f;
 
     private bool _isGrounded;
 
@@ -39,7 +40,7 @@ public class Player : MonoBehaviour
     {
         HandleInput();
         HandleGroundCheck();
-        HandleJumping();
+        HandleMaxFallSpeed();
     }
 
     private void FixedUpdate()
@@ -56,7 +57,7 @@ public class Player : MonoBehaviour
     private void OnGUI()
     {
         GUI.contentColor = Color.white;
-        GUILayout.Label($"Speed: {_rb.linearVelocity.magnitude}");
+        GUILayout.Label($"Vel: {_rb.linearVelocity} | Speed: {_rb.linearVelocity.magnitude}");
         GUILayout.Label($"Move Input: {_moveInput.x} | {Mathf.Abs(_rb.linearVelocityX) > _maxSpeed}");
     }
 
@@ -65,7 +66,11 @@ public class Player : MonoBehaviour
         var newMoveInput = _moveAction.ReadValue<Vector2>();
         var prevMoveInput = _moveInput;
 
-        // Check if left & right key just released
+        // Jumping
+        if (_isGrounded && _jumpAction.WasPerformedThisFrame())
+            _rb.linearVelocityY = _jumpPower * -Mathf.Sign(Physics2D.gravity.y);
+
+        // Checking if left & right key just released
         if (newMoveInput.x == 0)
         {
             if (prevMoveInput.x < 0)
@@ -101,9 +106,9 @@ public class Player : MonoBehaviour
         _rb.AddForceX(movement);
     }
 
-    private void HandleJumping()
+    private void HandleMaxFallSpeed()
     {
-        if (_jumpAction.WasPerformedThisFrame())
-            _rb.linearVelocityY = _jumpPower * -Mathf.Sign(Physics2D.gravity.y);
+        if (_rb.linearVelocityY < -_maxFallSpeed)
+            _rb.linearVelocityY = -_maxFallSpeed;
     }
 }
