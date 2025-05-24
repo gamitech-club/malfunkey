@@ -1,0 +1,99 @@
+:root {
+    color: #3e3546;
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
+    -unity-font-definition: url("project://database/Assets/Fonts/PressStart2P-Regular%20SDF.asset?fileID=11400000&guid=7bc2d522316c3714da535e097aa3c4b8&type=2#PressStart2P-Regular SDF");
+}
+
+.btn {
+    font-size: 20px;
+    -unity-text-align: upper-center;
+    background-color: #fbb954;
+    border-color: black;
+    border-width: 4px;
+}
+
+.btn:focus {
+    border-color: white;
+}
+
+.btn:hover {
+    border-color: white;
+}
+
+.btn-ghost {
+    color: rgb(227, 207, 180);
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.6);
+    background-color: transparent;
+    border-color: transparent;
+    border-width: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.btn-ghost:hover {
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.btn-ghost:focus {
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.btn-ghost:active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mr-12 {
+    margin-right: 12px;
+}
+
+.btn-back {
+    position: absolute;
+    top: 32px;
+    left: 42px;
+    font-size: 26px;
+}
+
+.panel-container {
+    width: 660px;
+    max-width: 90%;
+}
+
+.panel-title {
+    font-size: 36px;
+    background-color: rgb(227, 207, 180);
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-top-width: 4px;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+    border-left-width: 4px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 8px;
+    margin-left: 0;
+    -unity-text-align: upper-center;
+}
+
+.panel {
+    background-color: rgb(227, 207, 180);
+    padding-top: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    border-top-width: 4px;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+    border-left-width: 4px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+}
