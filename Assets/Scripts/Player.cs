@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     [SerializeField] private int _jumpLimit = -1;
     [SerializeField] private int _poundLimit = -1;
 
+    public event Action Jumped;
     public event Action Landed;
 
     public Rigidbody2D Rigidbody => _rb;
@@ -128,12 +129,6 @@ public class Player : MonoBehaviour
     private void HandleGroundCheck()
     {
         bool willLand = Physics2D.OverlapBox(transform.position + _groundCheckBounds.center, _groundCheckBounds.size, 0f, _groundLayers);
-
-        if (willLand && !_isGrounded)
-        {
-
-        }
-
         _isGrounded = willLand;
     }
 
@@ -160,9 +155,10 @@ public class Player : MonoBehaviour
     private void Jump()
     {
         _rb.linearVelocityY = _jumpPower;
-                
         if (_jumpAvailable > 0 && !_isInCharging)
             _jumpAvailable--;
+        
+        Jumped?.Invoke();
     }
 
     private void Pound()
