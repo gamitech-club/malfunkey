@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     public event Action Landed;
 
     public Rigidbody2D Rigidbody => _rb;
+    public Vector2 MoveInput => _moveInput;
 
     // Input
     private InputAction _moveAction;
