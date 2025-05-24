@@ -1945,15 +1945,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8617688888158191500, guid: 21594be754e7f12408198a02ef83e38f, type: 3}
       propertyPath: _jumpLimit
-      value: 4
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8617688888158191500, guid: 21594be754e7f12408198a02ef83e38f, type: 3}
+      propertyPath: _poundLimit
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8617688888158191500, guid: 21594be754e7f12408198a02ef83e38f, type: 3}
       propertyPath: _leftKeyLimit
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8617688888158191500, guid: 21594be754e7f12408198a02ef83e38f, type: 3}
       propertyPath: _rightKeyLimit
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8837579450735509160, guid: 21594be754e7f12408198a02ef83e38f, type: 3}
       propertyPath: m_Name
