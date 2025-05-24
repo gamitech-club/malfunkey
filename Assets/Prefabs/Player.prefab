@@ -99,9 +99,9 @@ GameObject:
   - component: {fileID: 2402136646139274481}
   - component: {fileID: 7710178253285872220}
   - component: {fileID: 8617688888158191500}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -220,3 +220,6 @@ MonoBehaviour:
   _velPower: 1.5
   _jumpPower: 7.5
   _maxFallSpeed: 15
+  _leftKeyLimit: -1
+  _rightKeyLimit: -1
+  _jumpLimit: -1

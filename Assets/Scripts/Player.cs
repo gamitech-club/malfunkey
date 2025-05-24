@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     private Vector2 _moveInput;
 
     private bool _isGrounded;
+    private bool _isInChargingStation;
     private int _leftKeyAvailable;
     private int _rightKeyAvailable;
     private int _jumpAvailable;
@@ -88,24 +89,23 @@ public class Player : MonoBehaviour
             if (jumpAvailable)
             {
                 _rb.linearVelocityY = _jumpPower;
-                if (_jumpAvailable > 0)
+                
+                if (_jumpAvailable > 0 && !_isInChargingStation)
                     _jumpAvailable--;
             }
         }
 
         // Checking if left & right key just released
-        if (newMoveInput.x == 0)
+        if (newMoveInput.x == 0 && !_isInChargingStation)
         {
-            if (prevMoveInput.x < 0)
+            if (prevMoveInput.x < 0 && _leftKeyAvailable > 0)
             {
-                if (_leftKeyAvailable > 0)
-                    _leftKeyAvailable--;
+                _leftKeyAvailable--;
             }
 
-            if (prevMoveInput.x > 0)
+            if (prevMoveInput.x > 0 && _rightKeyAvailable > 0)
             {
-                if (_rightKeyAvailable > 0)
-                    _rightKeyAvailable--;
+                _rightKeyAvailable--;
             }
         }
 
@@ -142,5 +142,18 @@ public class Player : MonoBehaviour
     {
         if (_rb.linearVelocityY < -_maxFallSpeed)
             _rb.linearVelocityY = -_maxFallSpeed;
+    }
+
+    public void OnEnterChargingStation()
+    {
+        _isInChargingStation = true;
+        _leftKeyAvailable = _leftKeyLimit;
+        _rightKeyAvailable = _rightKeyLimit;
+        _jumpAvailable = _jumpLimit;
+    }
+
+    public void OnExitChargingStation()
+    {
+        _isInChargingStation = false;
     }
 }
