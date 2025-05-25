@@ -5,7 +5,7 @@ public class BreakableGlass : MonoBehaviour
 {
     public static readonly List<BreakableGlass> Instances = new();
 
-    [SerializeField] private AudioSource _sfxJumpPad;
+    [SerializeField] private AudioSource _sfxBreak ;
     [SerializeField] private ParticleSystem _breakParticles;
     private BoxCollider2D _collider;
     private bool _isTriggerMode;
@@ -13,6 +13,12 @@ public class BreakableGlass : MonoBehaviour
     private void Awake()
     {
         _collider = GetComponent<BoxCollider2D>();
+        
+        if (_sfxBreak == null){
+            _sfxBreak = gameObject.AddComponent<AudioSource>();
+            _sfxBreak.clip = Resources.Load<AudioClip>("Audio/JumpPad");
+            _sfxBreak.playOnAwake = false;
+        }
     }
 
     private void OnEnable()
@@ -32,7 +38,7 @@ public class BreakableGlass : MonoBehaviour
             other.TryGetComponent(out Player player) &&
             player.IsPounding){
 
-            _sfxJumpPad?.Play();
+            _sfxBreak?.Play();
 
             var particles = Instantiate(_breakParticles, transform.position, Quaternion.identity);
             particles.Play();
