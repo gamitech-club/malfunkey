@@ -3315,10 +3315,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Setup
       objectReference: {fileID: 0}
-    - target: {fileID: 6412127728881927293, guid: 3bf86432fb9a4e04c90ba35e13203ede, type: 3}
-      propertyPath: orthographic size
-      value: 12
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
