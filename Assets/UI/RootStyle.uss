@@ -7,7 +7,7 @@
 .btn {
     font-size: 20px;
     -unity-text-align: upper-center;
-    background-color: rgb(251, 185, 84);
+    background-color: #e3c896;
     border-color: rgb(62, 53, 70);
     border-width: 4px;
     border-radius: 6px;
