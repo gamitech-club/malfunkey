@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D Rigidbody => _rb;
     public Vector2 MoveInput => _moveInput;
     public bool IsGrounded => _isGrounded;
+    public bool IsPounding => _isPounding;
     public int LeftKeyAvailable => _leftKeyAvailable;
     public int RightKeyAvailable => _rightKeyAvailable;
     public int JumpAvailable => _jumpAvailable;
@@ -50,6 +51,7 @@ public class Player : MonoBehaviour
 
     private bool _isGrounded;
     private bool _isInCharging;
+    private bool _isPounding;
     private int _leftKeyAvailable;
     private int _rightKeyAvailable;
     private int _jumpAvailable;
@@ -145,6 +147,12 @@ public class Player : MonoBehaviour
     private void HandleGroundCheck()
     {
         bool willLand = Physics2D.OverlapBox(transform.position + _groundCheckBounds.center, _groundCheckBounds.size, 0f, _groundLayers);
+        if (willLand && !_isGrounded)
+        {
+            _isPounding = false;
+            Landed?.Invoke();
+        }
+
         _isGrounded = willLand;
     }
 
@@ -182,6 +190,7 @@ public class Player : MonoBehaviour
 
     private void Pound()
     {
+        _isPounding = true;
         _rb.linearVelocity = Vector2.zero;
         _rb.linearVelocityY = -_maxFallSpeed;
 
