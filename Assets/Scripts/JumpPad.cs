@@ -4,10 +4,11 @@ using UnityEngine;
 public class JumpPad : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
+    public Sprite triggeredSprite;
+    public AudioSource _sfxJumpPad;
     public float baseBouncePower = 20f;
     public float fallSpeedMultiplier = 1f;
     public float delayBeforeResetSprite = 0.2f;
-    public Sprite triggeredSprite;
 
     private Animator animator;
     private Sprite defaultSprite;
@@ -34,6 +35,7 @@ public class JumpPad : MonoBehaviour
     {
     	isBouncing = true;
         spriteRenderer.sprite = triggeredSprite;
+        _sfxJumpPad.Play();
 
     	float fallSpeed = Mathf.Abs(rb.linearVelocity.y);
     	float bouncePower = Mathf.Max(baseBouncePower, baseBouncePower + fallSpeed * fallSpeedMultiplier);
