@@ -1,5 +1,6 @@
 using UnityEngine;
 using EditorAttributes;
+using DG.Tweening;
 
 public class PlayerVisual : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class PlayerVisual : MonoBehaviour
 
     private Rigidbody2D _rb;
     private AnimState _state;
+    private Tween _spriteBounceTween;
     private bool _isFalling;
 
     private void Awake()
@@ -173,6 +175,8 @@ public class PlayerVisual : MonoBehaviour
     {
         _sfxJump.Play();
         _fxJump.Play();
+        _spriteBounceTween?.Complete(true);
+        _spriteBounceTween = _sprite.transform.DOPunchScale(Vector3.one * .25f, 0.2f, 7);
     }
 
     private void OnLanded()
@@ -187,6 +191,8 @@ public class PlayerVisual : MonoBehaviour
         }
 
         _fxLand.Play();
+        _spriteBounceTween?.Complete(true);
+        _spriteBounceTween = _sprite.transform.DOPunchScale(-Vector3.one * .25f, 0.2f, 7);
     }
 
     private void OnPounded()
