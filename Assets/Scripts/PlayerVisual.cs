@@ -3,12 +3,25 @@ using EditorAttributes;
 
 public class PlayerVisual : MonoBehaviour
 {
+    private enum AnimState
+    {
+        Idle,
+        Walk
+    }
+    
     [SerializeField, Required] private Player _player;
     [SerializeField, Required] private Animator _animator;
     [SerializeField, Required] private SpriteRenderer _sprite;
 
     [Header("SFXs")]
     [SerializeField] private AudioSource _sfxJump;
+
+    private AnimState _state;
+
+    private void Start()
+    {
+        SetAnimationState(AnimState.Idle);
+    }
 
     private void OnEnable()
     {
@@ -28,7 +41,11 @@ public class PlayerVisual : MonoBehaviour
 
     private void HandleAnimation()
     {
-        _animator.Play("PlayerIdle");
+        var moveInput = _player.MoveInput;
+        if (moveInput.x == 0)
+            SetAnimationState(AnimState.Idle);
+        else
+            SetAnimationState(AnimState.Walk);
     }
 
     private void HandleSpriteFlipping()
@@ -38,6 +55,24 @@ public class PlayerVisual : MonoBehaviour
             _sprite.flipX = true;
         else if (moveInput.x > 0)
             _sprite.flipX = false;
+    }
+
+    private void SetAnimationState(AnimState state)
+    {
+        if (state == _state)
+            return;
+        
+        switch (state)
+        {
+            case AnimState.Idle:
+                _animator.Play("PlayerIdle");
+                break;
+            case AnimState.Walk:
+                _animator.Play("PlayerWalk");
+                break;
+        }
+
+        _state = state;
     }
 
     private void OnJumped()
