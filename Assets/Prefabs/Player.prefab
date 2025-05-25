@@ -11027,6 +11027,8 @@ MonoBehaviour:
   _velPower: 1
   _jumpPower: 6.5
   _maxFallSpeed: 12
+  _voidHeigth: -15
+  _loseTransition: {fileID: 11400000, guid: 9710edcf009d00943af961dd2a7ca7d3, type: 2}
   _leftKeyLimit: 1
   _rightKeyLimit: 1
   _jumpLimit: 1
