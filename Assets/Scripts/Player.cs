@@ -146,8 +146,9 @@ public class Player : MonoBehaviour
     {
         var newMoveInput = _moveAction.ReadValue<Vector2>();
         var prevMoveInput = _moveInput;
+        var paused = PauseMenu.Instance.IsPaused;
 
-        if (_isPounding || PauseMenu.Instance.IsPaused)
+        if (_isPounding || paused)
         {
             newMoveInput = Vector2.zero;
         }
@@ -171,14 +172,14 @@ public class Player : MonoBehaviour
         _moveInput = newMoveInput;
 
         // Jumping
-        if (_jumpAction.WasPerformedThisFrame() && _isGrounded)
+        if (_jumpAction.WasPerformedThisFrame() && _isGrounded && !paused)
         {
             if (_jumpAvailable == -1 || _jumpAvailable > 0)
                 Jump();
         }
 
         // Pounding
-        if (_poundAction.WasPerformedThisFrame() && !_isGrounded)
+        if (_poundAction.WasPerformedThisFrame() && !_isGrounded && !paused)
         {
             if (_poundAvailable == -1 || _poundAvailable > 0)
                 Pound();

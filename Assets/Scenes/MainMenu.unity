@@ -268,7 +268,7 @@ MonoBehaviour:
     MenuPage: {fileID: 606639817}
     AnimationOverride: 0
   _gameScene: 1
-  _transitionSettings: {fileID: 11400000, guid: 9710edcf009d00943af961dd2a7ca7d3, type: 2}
+  _transitionSettings: {fileID: 11400000, guid: 2eec88d4ca6df24419aab2fd6b04c543, type: 2}
   _cameraSwayFrequency: 0.1
   _cameraSwayAmplitude: 1.5
 --- !u!1001 &1313324548
@@ -323,6 +323,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Setup
       objectReference: {fileID: 0}
+    - target: {fileID: 5352327195329546993, guid: 3bf86432fb9a4e04c90ba35e13203ede, type: 3}
+      propertyPath: _buttonMenuPairs.Array.data[0].MenuPage
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6342307447848237787, guid: 3bf86432fb9a4e04c90ba35e13203ede, type: 3}
       propertyPath: m_Color.a
       value: 0.6509804
@@ -350,6 +354,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1169424277029410269, guid: 3bf86432fb9a4e04c90ba35e13203ede, type: 3}
+    - {fileID: 8095739508890034709, guid: 3bf86432fb9a4e04c90ba35e13203ede, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bf86432fb9a4e04c90ba35e13203ede, type: 3}

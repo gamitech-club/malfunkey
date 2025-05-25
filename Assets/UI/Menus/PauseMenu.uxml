@@ -5,6 +5,7 @@
         <engine:VisualElement style="padding-bottom: 60px;">
             <engine:Button text="Resume" name="ResumeButton" class="btn" style="background-color: rgb(11, 138, 143); color: rgb(255, 255, 255);" />
             <engine:Button text="Restart" name="RestartButton" class="btn" />
+            <engine:Button text="Settings" name="SettingsButton" class="btn" />
             <engine:Button text="Main Menu" name="MainMenuButton" class="btn" />
         </engine:VisualElement>
     </engine:VisualElement>
