@@ -160,7 +160,12 @@ public class Player : MonoBehaviour
         bool willLand = Physics2D.OverlapBox(transform.position + _groundCheckBounds.center, _groundCheckBounds.size, 0f, _groundLayers);
         if (willLand && !_isGrounded)
         {
-            Invoke(nameof(ResetPound), .15f);
+            if (_isPounding)
+            {
+                Invoke(nameof(ResetPound), .15f);
+                Camera2D.Current.AddShake(.1f, 1f, .4f);
+            }
+
             Landed?.Invoke();
         }
 
