@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 857f41cfdd837804691330cde2ba2e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sprite: {fileID: 7110910779035277814}
   _sfxCharge: {fileID: 7905451070332980615}
 --- !u!1 &5911724071917698256
 GameObject:

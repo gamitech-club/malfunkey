@@ -24,16 +24,16 @@ public class JumpPad : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (isBouncing) return;
+        if (isBouncing)
+            return;
 
-        Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
-        if (rb != null && rb.linearVelocity.y <= 0)
-        {
-        	StartCoroutine(BounceAfterStretch(rb));
-        }
+        Rigidbody2D rb = other.attachedRigidbody;
+        if (!rb) return;
+
+        StartCoroutine(BounceCoroutine(rb));
     }
 
-    private IEnumerator BounceAfterStretch(Rigidbody2D rb)
+    private IEnumerator BounceCoroutine(Rigidbody2D rb)
     {
     	isBouncing = true;
         spriteRenderer.sprite = triggeredSprite;
@@ -43,7 +43,7 @@ public class JumpPad : MonoBehaviour
         bounceTween = spriteRenderer.transform.DOPunchScale(Vector3.one * .25f, 0.2f, 7)
             .SetLink(spriteRenderer.gameObject);
 
-    	float fallSpeed = Mathf.Abs(rb.linearVelocity.y);
+    	float fallSpeed = Mathf.Abs(Mathf.Min(0, rb.linearVelocity.y));
     	float bouncePower = Mathf.Max(baseBouncePower, baseBouncePower + fallSpeed * fallSpeedMultiplier);
     	rb.linearVelocityY = bouncePower;
 
