@@ -19,10 +19,18 @@ public class PlayerVisual : MonoBehaviour
     [Header("SFXs")]
     [SerializeField] private AudioSource _sfxJump;
     [SerializeField] private AudioSource _sfxLand;
+    [SerializeField] private AudioSource _sfxFall;
     [SerializeField] private AudioSource _sfxPound;
     [SerializeField] private AudioSource _sfxPoundLand;
 
+    private Rigidbody2D _rb;
     private AnimState _state;
+    private bool _isFalling;
+
+    private void Awake()
+    {
+        _rb = _player.Rigidbody;
+    }
 
     private void Start()
     {
@@ -47,6 +55,7 @@ public class PlayerVisual : MonoBehaviour
     {
         HandleAnimation();
         HandleSpriteFlipping();
+        HandleFallSFX();
     }
 
     private void HandleAnimation()
@@ -67,7 +76,7 @@ public class PlayerVisual : MonoBehaviour
         }
         else
         {
-            if (Mathf.Abs(_player.Rigidbody.linearVelocityX) < 0.5f) {
+            if (Mathf.Abs(_rb.linearVelocityX) < 0.5f) {
                 SetAnimationState(AnimState.Idle);
             } else {
                 SetAnimationState(AnimState.Walk);
@@ -109,6 +118,17 @@ public class PlayerVisual : MonoBehaviour
         }
 
         _state = state;
+    }
+
+    private void HandleFallSFX()
+    {
+        var falling = _rb.linearVelocityY < -0.1f;
+        if (falling && !_isFalling)
+        {
+            _sfxFall.Play();
+        }
+
+        _isFalling = falling;
     }
 
     private void OnJumped()
