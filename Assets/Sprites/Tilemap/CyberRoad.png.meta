@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,9 +104,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 48
-        width: 16
-        height: 16
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,10 +125,10 @@ TextureImporter:
       name: CyberRoad_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 48
-        width: 16
-        height: 16
+        x: 32
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03d6ab1e0342a5041b2113df0990ac0d
-      internalID: 1449543725
+      spriteID: 1d67ce1d3eb016544a4559190dbec5e9
+      internalID: -1114266742
       vertices: []
       indices: 
       edges: []
@@ -147,10 +147,10 @@ TextureImporter:
       name: CyberRoad_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
+        x: 64
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,8 +159,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16b5bd264afa6ee40979394d38244277
-      internalID: 2128805346
+      spriteID: 0d023ae07b8ce5744b09ab1895c51585
+      internalID: 442493786
       vertices: []
       indices: 
       edges: []
@@ -169,10 +169,10 @@ TextureImporter:
       name: CyberRoad_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 48
-        width: 16
-        height: 16
+        x: 96
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,8 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb9cefa04c40a8e40b5c35155bce0253
-      internalID: -279908938
+      spriteID: 8189ce34189a11543a869e8ba79ffe9c
+      internalID: 425277428
       vertices: []
       indices: 
       edges: []
@@ -192,9 +192,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 16
-        height: 16
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9927e3d4322af54d87ee01dcdeae247
-      internalID: -1481959251
+      spriteID: 073f2a51e1b4d88428025889713cc514
+      internalID: -527486637
       vertices: []
       indices: 
       edges: []
@@ -213,10 +213,10 @@ TextureImporter:
       name: CyberRoad_5
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
+        x: 32
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,8 +225,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0636075c61ba934eabfccd71ae65368
-      internalID: 1490296008
+      spriteID: 37fb60312945a91499b4c8a4afb526c0
+      internalID: 1642601922
       vertices: []
       indices: 
       edges: []
@@ -235,10 +235,10 @@ TextureImporter:
       name: CyberRoad_6
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
+        x: 64
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,8 +247,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 568734227d6e7ad4eaf49a7adfc707ec
-      internalID: -447503379
+      spriteID: 02f93fd792e2afb4daa39221aec4f907
+      internalID: -1661852142
       vertices: []
       indices: 
       edges: []
@@ -257,10 +257,10 @@ TextureImporter:
       name: CyberRoad_7
       rect:
         serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
+        x: 96
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,8 +269,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92c7674c99c41e34fb226b2dd9991d11
-      internalID: -1827970854
+      spriteID: 72db633c3c822884c9f33d91af540b54
+      internalID: 1454678286
       vertices: []
       indices: 
       edges: []
@@ -279,10 +279,10 @@ TextureImporter:
       name: CyberRoad_8
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
-        width: 16
-        height: 16
+        x: 128
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,8 +291,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 138189c14f41c8e48a7a8fb696f364b7
-      internalID: -1230234544
+      spriteID: 94334bdff6ab8e64ca31a74eb434eafe
+      internalID: -522523283
       vertices: []
       indices: 
       edges: []
@@ -301,10 +301,10 @@ TextureImporter:
       name: CyberRoad_9
       rect:
         serializedVersion: 2
-        x: 80
-        y: 32
-        width: 16
-        height: 16
+        x: 160
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,8 +313,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b904b81f4746ac4aa514af50c48ce72
-      internalID: 1340954280
+      spriteID: ae15b60e280475a4aa5ee633cfb5089e
+      internalID: -385061058
       vertices: []
       indices: 
       edges: []
@@ -323,10 +323,10 @@ TextureImporter:
       name: CyberRoad_10
       rect:
         serializedVersion: 2
-        x: 96
-        y: 32
-        width: 16
-        height: 16
+        x: 192
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -335,8 +335,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d805996a47f5579498fc6dc559ae4d8d
-      internalID: -164980507
+      spriteID: 4201976337d525247a9e58da59e3f42b
+      internalID: -425436871
       vertices: []
       indices: 
       edges: []
@@ -346,9 +346,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
-        width: 16
-        height: 16
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -357,8 +357,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53c25f31067a9c2439a452cf9ff0e548
-      internalID: 1547928143
+      spriteID: c5964949193416242b03bd90deb90c0a
+      internalID: -711777470
       vertices: []
       indices: 
       edges: []
@@ -367,10 +367,10 @@ TextureImporter:
       name: CyberRoad_12
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -379,8 +379,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e076b24af45cda44c9cbda7e34a02c99
-      internalID: -469333082
+      spriteID: 334c2b1d7b9529645bb074d7b60094ee
+      internalID: 1621800058
       vertices: []
       indices: 
       edges: []
@@ -389,10 +389,10 @@ TextureImporter:
       name: CyberRoad_13
       rect:
         serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
+        x: 64
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -401,8 +401,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4943cd660c05147459034a0cc11c81c6
-      internalID: -2014747663
+      spriteID: 05acb15ade51dad44991363711a82522
+      internalID: 1129683448
       vertices: []
       indices: 
       edges: []
@@ -411,10 +411,10 @@ TextureImporter:
       name: CyberRoad_14
       rect:
         serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
+        x: 96
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -423,8 +423,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4da8408c98f9de64eb3ee3096016bc87
-      internalID: -1382376083
+      spriteID: 74091c838d98cf243a6eff9a15a69cfa
+      internalID: 1668655269
       vertices: []
       indices: 
       edges: []
@@ -433,10 +433,10 @@ TextureImporter:
       name: CyberRoad_15
       rect:
         serializedVersion: 2
-        x: 64
-        y: 16
-        width: 16
-        height: 16
+        x: 128
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -445,8 +445,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e90d6d2d98e4d849ba1e55a9879c02b
-      internalID: -1990878487
+      spriteID: 00f4ebf5d45b2f249a481ecb251265d8
+      internalID: 1399883666
       vertices: []
       indices: 
       edges: []
@@ -455,10 +455,10 @@ TextureImporter:
       name: CyberRoad_16
       rect:
         serializedVersion: 2
-        x: 80
-        y: 16
-        width: 16
-        height: 16
+        x: 160
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -467,8 +467,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 869f7e544d60e964582feee2b0d8035b
-      internalID: 147522782
+      spriteID: 2636b4f31cd0cad4ea30e9e341820fb6
+      internalID: -181057271
       vertices: []
       indices: 
       edges: []
@@ -477,10 +477,10 @@ TextureImporter:
       name: CyberRoad_17
       rect:
         serializedVersion: 2
-        x: 96
-        y: 16
-        width: 16
-        height: 16
+        x: 192
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -489,8 +489,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1eda3dc909e64ec48a5fdfae5d1077ae
-      internalID: -1417915928
+      spriteID: c51bde68243c7054e90a0792a4a6db9a
+      internalID: 62545314
       vertices: []
       indices: 
       edges: []
@@ -501,8 +501,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -511,8 +511,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b43885053f92b5e4f83b83af091085ec
-      internalID: 1799228215
+      spriteID: fbbdd449bffc0d64ea098ac0673b0a38
+      internalID: 1377580728
       vertices: []
       indices: 
       edges: []
@@ -521,10 +521,10 @@ TextureImporter:
       name: CyberRoad_19
       rect:
         serializedVersion: 2
-        x: 16
+        x: 32
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -533,8 +533,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdc94f14fd925424ebf5f7ecaafcb590
-      internalID: -890568628
+      spriteID: 159b209e10ae41e4c80e5132acaee1d8
+      internalID: -204270806
       vertices: []
       indices: 
       edges: []
@@ -543,10 +543,10 @@ TextureImporter:
       name: CyberRoad_20
       rect:
         serializedVersion: 2
-        x: 32
+        x: 64
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -555,8 +555,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cec3e848bfff34b4f89be9d0ca2d2775
-      internalID: 160972264
+      spriteID: 2e9dda33c8ce27c45ac40b408d8b929e
+      internalID: 1120130887
       vertices: []
       indices: 
       edges: []
@@ -565,10 +565,10 @@ TextureImporter:
       name: CyberRoad_21
       rect:
         serializedVersion: 2
-        x: 48
+        x: 96
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -577,8 +577,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14e5653c621df6349af5c76f82001645
-      internalID: -1283614938
+      spriteID: e09c2c8f0c895ef40a56fec8c993d721
+      internalID: -2011698342
       vertices: []
       indices: 
       edges: []
@@ -587,10 +587,10 @@ TextureImporter:
       name: CyberRoad_22
       rect:
         serializedVersion: 2
-        x: 64
+        x: 128
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -599,8 +599,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cff0f3bf167cdcd408219af91e022099
-      internalID: -248584364
+      spriteID: b5be3bc42afb0a842b67d4ada7e35bca
+      internalID: 471991637
       vertices: []
       indices: 
       edges: []
@@ -609,10 +609,10 @@ TextureImporter:
       name: CyberRoad_23
       rect:
         serializedVersion: 2
-        x: 80
+        x: 160
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -621,8 +621,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a97f53e5eee702459553df2bcd516df
-      internalID: 256172869
+      spriteID: 4b3c8d4afaf83674c84a720633793bc8
+      internalID: 394322836
       vertices: []
       indices: 
       edges: []
@@ -631,10 +631,10 @@ TextureImporter:
       name: CyberRoad_24
       rect:
         serializedVersion: 2
-        x: 96
+        x: 192
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -643,8 +643,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8c81a6eb64e9ad4086b83e75466f532
-      internalID: 1825568577
+      spriteID: 4675ddb4bc99744489cc27a7f8e8bf6d
+      internalID: -509273408
       vertices: []
       indices: 
       edges: []
@@ -653,7 +653,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9db6f06906cdd1f45a3f4946a398214e
+    spriteID: c5f8c1bea97b4a448a3856e25f6ffe21
     internalID: 0
     vertices: []
     indices: 
@@ -663,33 +663,33 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       CyberRoad_0: -920365958396152472
-      CyberRoad_1: 1449543725
-      CyberRoad_10: -164980507
-      CyberRoad_11: 1547928143
-      CyberRoad_12: -469333082
-      CyberRoad_13: -2014747663
-      CyberRoad_14: -1382376083
-      CyberRoad_15: -1990878487
-      CyberRoad_16: 147522782
-      CyberRoad_17: -1417915928
-      CyberRoad_18: 1799228215
-      CyberRoad_19: -890568628
-      CyberRoad_2: 2128805346
-      CyberRoad_20: 160972264
-      CyberRoad_21: -1283614938
-      CyberRoad_22: -248584364
-      CyberRoad_23: 256172869
-      CyberRoad_24: 1825568577
-      CyberRoad_3: -279908938
-      CyberRoad_4: -1481959251
-      CyberRoad_5: 1490296008
-      CyberRoad_6: -447503379
-      CyberRoad_7: -1827970854
-      CyberRoad_8: -1230234544
-      CyberRoad_9: 1340954280
+      CyberRoad_1: -1114266742
+      CyberRoad_10: -425436871
+      CyberRoad_11: -711777470
+      CyberRoad_12: 1621800058
+      CyberRoad_13: 1129683448
+      CyberRoad_14: 1668655269
+      CyberRoad_15: 1399883666
+      CyberRoad_16: -181057271
+      CyberRoad_17: 62545314
+      CyberRoad_18: 1377580728
+      CyberRoad_19: -204270806
+      CyberRoad_2: 442493786
+      CyberRoad_20: 1120130887
+      CyberRoad_21: -2011698342
+      CyberRoad_22: 471991637
+      CyberRoad_23: 394322836
+      CyberRoad_24: -509273408
+      CyberRoad_3: 425277428
+      CyberRoad_4: -527486637
+      CyberRoad_5: 1642601922
+      CyberRoad_6: -1661852142
+      CyberRoad_7: 1454678286
+      CyberRoad_8: -522523283
+      CyberRoad_9: -385061058
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
