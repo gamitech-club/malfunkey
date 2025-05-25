@@ -1,5 +1,5 @@
 :root {
-    color: #3e3546;
+    color: rgb(62, 53, 70);
     text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
     -unity-font-definition: url("project://database/Assets/Fonts/PressStart2P-Regular%20SDF.asset?fileID=11400000&guid=7bc2d522316c3714da535e097aa3c4b8&type=2#PressStart2P-Regular SDF");
 }
@@ -7,17 +7,24 @@
 .btn {
     font-size: 20px;
     -unity-text-align: upper-center;
-    background-color: #fbb954;
+    background-color: rgb(251, 185, 84);
     border-color: black;
     border-width: 4px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    transition-property: scale;
+    transition-duration: 0.1s;
 }
 
-.btn:focus {
-    border-color: white;
-}
-
+.btn:focus,
 .btn:hover {
     border-color: white;
+}
+
+.btn:active {
+    scale: 0.9 0.9;
 }
 
 .btn-ghost {
