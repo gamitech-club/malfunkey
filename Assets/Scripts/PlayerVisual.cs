@@ -19,6 +19,7 @@ public class PlayerVisual : MonoBehaviour
     [Header("SFXs")]
     [SerializeField] private AudioSource _sfxJump;
     [SerializeField] private AudioSource _sfxLand;
+    [SerializeField] private AudioSource _sfxPound;
 
     private AnimState _state;
 
@@ -31,12 +32,14 @@ public class PlayerVisual : MonoBehaviour
     {
         _player.Jumped += OnJumped;
         _player.Landed += OnLanded;
+        _player.Pounded += OnPounded;
     }
 
     private void OnDisable()
     {
         _player.Jumped -= OnJumped;
         _player.Landed -= OnLanded;
+        _player.Pounded -= OnPounded;
     }
 
     private void Update()
@@ -115,5 +118,10 @@ public class PlayerVisual : MonoBehaviour
     private void OnLanded()
     {
         _sfxLand.Play();
+    }
+
+    private void OnPounded()
+    {
+        _sfxPound.Play();
     }
 }
