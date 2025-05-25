@@ -563,10 +563,10 @@ MonoBehaviour:
   _velPower: 1.3
   _jumpPower: 7
   _maxFallSpeed: 15
-  _leftKeyLimit: -1
-  _rightKeyLimit: -1
-  _jumpLimit: -1
-  _poundLimit: -1
+  _leftKeyLimit: 1
+  _rightKeyLimit: 1
+  _jumpLimit: 1
+  _poundLimit: 1
 --- !u!114 &2521440282457150281
 MonoBehaviour:
   m_ObjectHideFlags: 0

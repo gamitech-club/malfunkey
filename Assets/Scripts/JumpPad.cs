@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class JumpPad : MonoBehaviour
 {
     public float baseBounceForce = 20f;
@@ -8,6 +9,7 @@ public class JumpPad : MonoBehaviour
 
     private Animator animator;
     private bool isBouncing = false;
+    
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -27,7 +29,7 @@ public class JumpPad : MonoBehaviour
     private System.Collections.IEnumerator BounceAfterStretch(Rigidbody2D rb)
     {
     	isBouncing = true;
-    	animator.SetTriger("Stretch");
+    	animator.SetTrigger("Stretch");
 
     	yield return new WaitForSeconds(delayBeforeBounce);
 
