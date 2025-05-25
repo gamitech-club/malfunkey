@@ -16,6 +16,11 @@ public class PlayerVisual : MonoBehaviour
     [SerializeField, Required] private Animator _animator;
     [SerializeField, Required] private SpriteRenderer _sprite;
 
+    [Header("FXs")]
+    [SerializeField] private ParticleSystem _fxWalk;
+    [SerializeField] private ParticleSystem _fxJump;
+    [SerializeField] private ParticleSystem _fxLand;
+
     [Header("SFXs")]
     [SerializeField] private AudioSource _sfxWalk;
     [SerializeField] private AudioSource _sfxJump;
@@ -142,6 +147,11 @@ public class PlayerVisual : MonoBehaviour
                 break;
         }
 
+        if (state == AnimState.Walk)
+            _fxWalk.Play();
+        else
+            _fxWalk.Stop();
+
         _state = state;
     }
 
@@ -162,14 +172,21 @@ public class PlayerVisual : MonoBehaviour
     private void OnJumped()
     {
         _sfxJump.Play();
+        _fxJump.Play();
     }
 
     private void OnLanded()
     {
         if (_player.IsPounding)
+        {
             _sfxPoundLand.Play();
+        }
         else
+        {
             _sfxLand.Play();
+        }
+
+        _fxLand.Play();
     }
 
     private void OnPounded()
