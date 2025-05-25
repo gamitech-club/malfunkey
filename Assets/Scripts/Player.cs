@@ -216,16 +216,23 @@ public class Player : MonoBehaviour
         _rb.linearVelocity = Vector2.zero;
         _rb.linearVelocityY = -_maxFallSpeed;
 
+        foreach (var glass in BreakableGlass.Instances)
+            glass.SetTriggerMode(true);
+
         if (_poundAvailable > 0 && !_isInCharging)
             _poundAvailable--;
-        
+
         Pounded?.Invoke();
     }
 
     private void ResetPound()
     {
         _isPounding = false;
+
+        foreach (var glass in BreakableGlass.Instances)
+            glass.SetTriggerMode(false);
     }
+
 
     public void OnEnterChargingStation()
     {
