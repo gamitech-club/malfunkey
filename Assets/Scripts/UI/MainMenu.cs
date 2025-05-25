@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Assertions;
 using UnityEngine.UIElements;
 using EditorAttributes;
 using EasyTransition;
@@ -12,14 +11,12 @@ public class MainMenu : MenuPage
     [SerializeField] private float _cameraSwayFrequency = 1f;
     [SerializeField] private float _cameraSwayAmplitude = 1.5f;
 
-    // private Camera2D _camera;
+    private Camera2D _camera;
 
     protected override void Awake()
     {
         base.Awake();
-
-        // Assert.IsNotNull(Camera2D.Current, $"[{name}] {nameof(Camera2D)} instance not found in scene");
-        // _camera = Camera2D.Current;
+        _camera = Camera2D.Current;
     }
 
     protected override void Start()
@@ -34,7 +31,7 @@ public class MainMenu : MenuPage
         TryFocus();
 
         // Camera sway
-        // _camera.AddPersistentShake(_cameraSwayFrequency, _cameraSwayAmplitude);
+        _camera.AddPersistentShake(_cameraSwayFrequency, _cameraSwayAmplitude);
     }
 
     private void OnPlayButtonClicked()
