@@ -5114,6 +5114,6 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1377465196389325057}
   triggeredSprite: {fileID: 1989016671, guid: 36e973bb3b43e7d4493a11e0ede7e49f, type: 3}
   _sfxJumpPad: {fileID: 7154697883388448122}
-  baseBouncePower: 3
+  baseBouncePower: 7
   fallSpeedMultiplier: 0.5
   delayBeforeResetSprite: 0.2
