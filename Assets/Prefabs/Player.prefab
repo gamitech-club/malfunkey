@@ -165,7 +165,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 241bd34f654d55544a68ba15f0cadbff, type: 3}
   m_Resource: {fileID: 8300000, guid: 241bd34f654d55544a68ba15f0cadbff, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.7
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1082,12 +1082,12 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5051568350912954998}
+  - {fileID: 5248430735325178961}
   - {fileID: 3733388396459148745}
   - {fileID: 3132296449270214453}
   - {fileID: 3271263839732644187}
   - {fileID: 2874495056674746591}
   - {fileID: 4587333668825125855}
-  - {fileID: 5248430735325178961}
   - {fileID: 1394893362894004639}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1232,6 +1232,7 @@ MonoBehaviour:
   _player: {fileID: 8617688888158191500}
   _animator: {fileID: 4867722782137010079}
   _sprite: {fileID: 7467658751437327770}
+  _sfxWalk: {fileID: 1083942175631647768}
   _sfxJump: {fileID: 3143667734041813410}
   _sfxLand: {fileID: 6798371735352222077}
   _sfxFall: {fileID: 6994497477139352913}

@@ -17,6 +17,7 @@ public class PlayerVisual : MonoBehaviour
     [SerializeField, Required] private SpriteRenderer _sprite;
 
     [Header("SFXs")]
+    [SerializeField] private AudioSource _sfxWalk;
     [SerializeField] private AudioSource _sfxJump;
     [SerializeField] private AudioSource _sfxLand;
     [SerializeField] private AudioSource _sfxFall;
@@ -30,6 +31,7 @@ public class PlayerVisual : MonoBehaviour
     private void Awake()
     {
         _rb = _player.Rigidbody;
+        _sfxWalk.Play();
     }
 
     private void Start()
@@ -55,6 +57,7 @@ public class PlayerVisual : MonoBehaviour
     {
         HandleAnimation();
         HandleSpriteFlipping();
+        HandleWalkSFX();
         HandleFallSFX();
     }
 
@@ -76,7 +79,11 @@ public class PlayerVisual : MonoBehaviour
         }
         else
         {
-            if (Mathf.Abs(_rb.linearVelocityX) < 0.5f) {
+            bool isIdle = _player.IsOnConveyor
+                ? Mathf.Abs(_player.MoveInput.x) < 0.1f
+                : Mathf.Abs(_rb.linearVelocityX) < 0.5f;
+
+            if (isIdle) {
                 SetAnimationState(AnimState.Idle);
             } else {
                 SetAnimationState(AnimState.Walk);
@@ -91,6 +98,24 @@ public class PlayerVisual : MonoBehaviour
             _sprite.flipX = true;
         else if (moveInput.x > 0)
             _sprite.flipX = false;
+    }
+
+    private void HandleWalkSFX()
+    {
+        float volume = Mathf.InverseLerp(0, _player.MaxSpeed, Mathf.Abs(_rb.linearVelocityX));
+        _sfxWalk.volume = volume;
+        SetPlayWalkSFX(_state == AnimState.Walk);
+    }
+
+    private void HandleFallSFX()
+    {
+        var falling = _rb.linearVelocityY < -0.1f;
+        if (falling && !_isFalling)
+        {
+            _sfxFall.Play();
+        }
+
+        _isFalling = falling;
     }
 
     private void SetAnimationState(AnimState state)
@@ -120,15 +145,18 @@ public class PlayerVisual : MonoBehaviour
         _state = state;
     }
 
-    private void HandleFallSFX()
+    private void SetPlayWalkSFX(bool play)
     {
-        var falling = _rb.linearVelocityY < -0.1f;
-        if (falling && !_isFalling)
+        if (play)
         {
-            _sfxFall.Play();
+            if (!_sfxWalk.isPlaying)
+                _sfxWalk.Play();
         }
-
-        _isFalling = falling;
+        else
+        {
+            if (_sfxWalk.isPlaying)
+                _sfxWalk.Stop();
+        }
     }
 
     private void OnJumped()
