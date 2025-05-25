@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
     public Vector2 MoveInput => _moveInput;
     public bool IsGrounded => _isGrounded;
     public bool IsPounding => _isPounding;
+    public bool IsOnConveyor => _isOnConveyor;
     public int LeftKeyAvailable => _leftKeyAvailable;
     public int RightKeyAvailable => _rightKeyAvailable;
     public int JumpAvailable => _jumpAvailable;
@@ -53,6 +54,7 @@ public class Player : MonoBehaviour
     private bool _isGrounded;
     private bool _isInCharging;
     private bool _isPounding;
+    private bool _isOnConveyor;
     private int _leftKeyAvailable;
     private int _rightKeyAvailable;
     private int _jumpAvailable;
@@ -157,8 +159,11 @@ public class Player : MonoBehaviour
 
     private void HandleGroundCheck()
     {
-        bool willLand = Physics2D.OverlapBox(transform.position + _groundCheckBounds.center, _groundCheckBounds.size, 0f, _groundLayers);
-        if (willLand && !_isGrounded)
+        var ground = Physics2D.OverlapBox(transform.position + _groundCheckBounds.center, _groundCheckBounds.size, 0f, _groundLayers);
+        bool grounded = ground != null;
+        _isOnConveyor = grounded ? ground.CompareTag("Conveyor") : false;
+
+        if (grounded && !_isGrounded)
         {
             if (_isPounding)
             {
@@ -169,7 +174,7 @@ public class Player : MonoBehaviour
             Landed?.Invoke();
         }
 
-        _isGrounded = willLand;
+        _isGrounded = grounded;
     }
 
     private void HandleMovement()
