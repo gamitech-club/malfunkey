@@ -2,7 +2,9 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Assertions;
+using UnityEngine.SceneManagement;
 using EditorAttributes;
+using EasyTransition;
 
 public class Player : MonoBehaviour
 {
@@ -32,6 +34,10 @@ public class Player : MonoBehaviour
     [SerializeField] private float _velPower = 1.5f;
     [SerializeField] private float _jumpPower = 6f;
     [SerializeField] private float _maxFallSpeed = 15f;
+    
+    [Header("Void")]
+    [SerializeField] private float _voidHeigth = -15f;
+    [SerializeField, Required] private TransitionSettings _loseTransition;
 
     [Header("Limiters")]
     [HelpBox("Set to -1 for no limit", drawAbove: true)]
@@ -102,6 +108,7 @@ public class Player : MonoBehaviour
         HandleInput();
         HandleGroundCheck();
         HandleMaxFallSpeed();
+        HandleEndlessFalling();
 
         #if UNITY_EDITOR
         if (Keyboard.current.backslashKey.wasPressedThisFrame)
@@ -221,6 +228,15 @@ public class Player : MonoBehaviour
             _rb.linearVelocityY = -_maxFallSpeed;
     }
 
+    private void HandleEndlessFalling()
+    {
+        if (transform.position.y < _voidHeigth && !TransitionManager.Instance().IsTransitioning)
+        {
+            int scene = SceneManager.GetActiveScene().buildIndex;
+            TransitionManager.Instance().Transition(scene, _loseTransition, 0f);
+        }
+    }
+
     private void Jump()
     {
         _rb.linearVelocityY = _jumpPower;
@@ -247,7 +263,6 @@ public class Player : MonoBehaviour
         _isPounding = false;
         PoundReset?.Invoke();
     }
-
 
     public void OnEnterChargingStation()
     {
