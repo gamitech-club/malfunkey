@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
 
     public Rigidbody2D Rigidbody => _rb;
     public Vector2 MoveInput => _moveInput;
+    public bool IsGrounded => _isGrounded;
     public int LeftKeyAvailable => _leftKeyAvailable;
     public int RightKeyAvailable => _rightKeyAvailable;
     public int JumpAvailable => _jumpAvailable;
