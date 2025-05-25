@@ -78,6 +78,15 @@ public class Player : MonoBehaviour
         HandleInput();
         HandleGroundCheck();
         HandleMaxFallSpeed();
+
+        #if UNITY_EDITOR
+        if (Keyboard.current.backslashKey.wasPressedThisFrame)
+        {
+            var cursorPos = Camera2D.Current.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            _rb.linearVelocity = Vector2.zero;
+            transform.position = cursorPos;
+        }
+        #endif
     }
 
     private void FixedUpdate()
@@ -93,16 +102,18 @@ public class Player : MonoBehaviour
 
     private void OnGUI()
     {
+        #if UNITY_EDITOR
         GUI.contentColor = Color.white;
         GUILayout.Label($"Vel: {_rb.linearVelocity} | Speed: {_rb.linearVelocity.magnitude}");
         GUILayout.Label($"Move Input: {_moveInput.x} | {Mathf.Abs(_rb.linearVelocityX) > _maxSpeed}");
         GUILayout.Label($"Left: {_leftKeyAvailable} | Right: {_rightKeyAvailable}");
         GUILayout.Label($"Jump: {_jumpAvailable} | Pound: {_poundAvailable}");
+        #endif
     }
 
     private void HandleInput()
     {
-        if (PauseMenu.Instance.IsPaused)
+        if (_isPounding || PauseMenu.Instance.IsPaused)
         {
             _moveInput = Vector2.zero;
             return;
@@ -149,7 +160,7 @@ public class Player : MonoBehaviour
         bool willLand = Physics2D.OverlapBox(transform.position + _groundCheckBounds.center, _groundCheckBounds.size, 0f, _groundLayers);
         if (willLand && !_isGrounded)
         {
-            _isPounding = false;
+            Invoke(nameof(ResetPound), .15f);
             Landed?.Invoke();
         }
 
@@ -196,6 +207,11 @@ public class Player : MonoBehaviour
 
         if (_poundAvailable > 0 && !_isInCharging)
             _poundAvailable--;
+    }
+
+    private void ResetPound()
+    {
+        _isPounding = false;
     }
 
     public void OnEnterChargingStation()

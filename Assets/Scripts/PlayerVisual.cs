@@ -7,7 +7,9 @@ public class PlayerVisual : MonoBehaviour
     {
         Idle,
         Walk,
-        Jump
+        Jump,
+        PoundFall,
+        PoundStandup
     }
     
     [SerializeField, Required] private Player _player;
@@ -45,6 +47,16 @@ public class PlayerVisual : MonoBehaviour
 
     private void HandleAnimation()
     {
+        if (_player.IsPounding)
+        {
+            if (!_player.IsGrounded)
+                SetAnimationState(AnimState.PoundFall);
+            else
+                SetAnimationState(AnimState.PoundStandup);
+
+            return;
+        }
+
         if (!_player.IsGrounded)
         {
             SetAnimationState(AnimState.Jump);
@@ -83,6 +95,12 @@ public class PlayerVisual : MonoBehaviour
                 break;
             case AnimState.Jump:
                 _animator.Play("PlayerJump");
+                break;
+            case AnimState.PoundFall:
+                _animator.Play("PlayerPoundFall");
+                break;
+            case AnimState.PoundStandup:
+                _animator.Play("PlayerPoundStandup");
                 break;
         }
 
