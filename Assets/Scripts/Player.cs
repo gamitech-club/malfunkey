@@ -6,6 +6,17 @@ using EditorAttributes;
 
 public class Player : MonoBehaviour
 {
+    #region Singleton
+    private static Player _instance;
+    public static Player Instance {
+        get {
+            if (!_instance)
+                _instance = FindFirstObjectByType<Player>(FindObjectsInactive.Exclude);
+            return _instance;
+        }
+    }
+    #endregion
+
     [SerializeField, Required] private Rigidbody2D _rb;
 
     [Header("Ground check")]
@@ -32,6 +43,7 @@ public class Player : MonoBehaviour
     public event Action Jumped;
     public event Action Landed;
     public event Action Pounded;
+    public event Action PoundReset;
 
     public Rigidbody2D Rigidbody => _rb;
     public Vector2 MoveInput => _moveInput;
@@ -63,6 +75,14 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        if (_instance != null && _instance != this)
+        {
+            Debug.LogWarning($"Multiple instances of {nameof(Player)} found. Destroying the new one.");
+            Destroy(gameObject);
+            return;
+        }
+
+        _instance = this;
         _moveAction = InputSystem.actions.FindAction("Move");
         _jumpAction = InputSystem.actions.FindAction("Jump");
         _poundAction = InputSystem.actions.FindAction("Pound");
@@ -216,9 +236,6 @@ public class Player : MonoBehaviour
         _rb.linearVelocity = Vector2.zero;
         _rb.linearVelocityY = -_maxFallSpeed;
 
-        foreach (var glass in BreakableGlass.Instances)
-            glass.SetTriggerMode(true);
-
         if (_poundAvailable > 0 && !_isInCharging)
             _poundAvailable--;
 
@@ -228,9 +245,7 @@ public class Player : MonoBehaviour
     private void ResetPound()
     {
         _isPounding = false;
-
-        foreach (var glass in BreakableGlass.Instances)
-            glass.SetTriggerMode(false);
+        PoundReset?.Invoke();
     }
 
 
