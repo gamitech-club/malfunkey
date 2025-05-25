@@ -20,6 +20,7 @@ public class PlayerVisual : MonoBehaviour
     [SerializeField] private AudioSource _sfxJump;
     [SerializeField] private AudioSource _sfxLand;
     [SerializeField] private AudioSource _sfxPound;
+    [SerializeField] private AudioSource _sfxPoundLand;
 
     private AnimState _state;
 
@@ -117,7 +118,10 @@ public class PlayerVisual : MonoBehaviour
 
     private void OnLanded()
     {
-        _sfxLand.Play();
+        if (_player.IsPounding)
+            _sfxPoundLand.Play();
+        else
+            _sfxLand.Play();
     }
 
     private void OnPounded()
