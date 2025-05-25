@@ -113,14 +113,13 @@ public class Player : MonoBehaviour
 
     private void HandleInput()
     {
-        if (_isPounding || PauseMenu.Instance.IsPaused)
-        {
-            _moveInput = Vector2.zero;
-            return;
-        }
-        
         var newMoveInput = _moveAction.ReadValue<Vector2>();
         var prevMoveInput = _moveInput;
+
+        if (_isPounding || PauseMenu.Instance.IsPaused)
+        {
+            newMoveInput = Vector2.zero;
+        }
 
         // Checking if left & right key just released
         if (newMoveInput.x == 0 && !_isInCharging)
