@@ -1074,7 +1074,7 @@ MonoBehaviour:
     m_Bits: 64
   _groundCheckBounds:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0.25, y: 0.05, z: 0}
+    m_Extent: {x: 0.3, y: 0.05, z: 0}
   _maxSpeed: 6.5
   _acceleration: 30
   _deceleration: 25
