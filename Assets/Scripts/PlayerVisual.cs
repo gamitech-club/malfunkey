@@ -48,8 +48,7 @@ public class PlayerVisual : MonoBehaviour
         }
         else
         {
-            var moveInput = _player.MoveInput;
-            if (moveInput.x == 0) {
+            if (Mathf.Abs(_player.Rigidbody.linearVelocityX) < 0.5f) {
                 SetAnimationState(AnimState.Idle);
             } else {
                 SetAnimationState(AnimState.Walk);
