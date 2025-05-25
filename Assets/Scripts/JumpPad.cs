@@ -1,4 +1,5 @@
 using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 
 public class JumpPad : MonoBehaviour
@@ -13,6 +14,7 @@ public class JumpPad : MonoBehaviour
     private Animator animator;
     private Sprite defaultSprite;
     private bool isBouncing;
+    private Tween bounceTween;
     
     void Start()
     {
@@ -36,6 +38,10 @@ public class JumpPad : MonoBehaviour
     	isBouncing = true;
         spriteRenderer.sprite = triggeredSprite;
         _sfxJumpPad.Play();
+
+        bounceTween?.Complete(true);
+        bounceTween = spriteRenderer.transform.DOPunchScale(Vector3.one * .25f, 0.2f, 7)
+            .SetLink(spriteRenderer.gameObject);
 
     	float fallSpeed = Mathf.Abs(rb.linearVelocity.y);
     	float bouncePower = Mathf.Max(baseBouncePower, baseBouncePower + fallSpeed * fallSpeedMultiplier);

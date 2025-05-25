@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
 
     public Rigidbody2D Rigidbody => _rb;
     public Vector2 MoveInput => _moveInput;
+    public float MaxSpeed => _maxSpeed;
     public bool IsGrounded => _isGrounded;
     public bool IsPounding => _isPounding;
     public bool IsOnConveyor => _isOnConveyor;
