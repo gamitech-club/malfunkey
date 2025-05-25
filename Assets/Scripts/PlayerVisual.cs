@@ -6,7 +6,8 @@ public class PlayerVisual : MonoBehaviour
     private enum AnimState
     {
         Idle,
-        Walk
+        Walk,
+        Jump
     }
     
     [SerializeField, Required] private Player _player;
@@ -41,11 +42,19 @@ public class PlayerVisual : MonoBehaviour
 
     private void HandleAnimation()
     {
-        var moveInput = _player.MoveInput;
-        if (moveInput.x == 0)
-            SetAnimationState(AnimState.Idle);
+        if (!_player.IsGrounded)
+        {
+            SetAnimationState(AnimState.Jump);
+        }
         else
-            SetAnimationState(AnimState.Walk);
+        {
+            var moveInput = _player.MoveInput;
+            if (moveInput.x == 0) {
+                SetAnimationState(AnimState.Idle);
+            } else {
+                SetAnimationState(AnimState.Walk);
+            }
+        }
     }
 
     private void HandleSpriteFlipping()
@@ -69,6 +78,9 @@ public class PlayerVisual : MonoBehaviour
                 break;
             case AnimState.Walk:
                 _animator.Play("PlayerWalk");
+                break;
+            case AnimState.Jump:
+                _animator.Play("PlayerJump");
                 break;
         }
 
