@@ -113,15 +113,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: JumpPad_Default
+      name: JumpPad_Triggered
       rect:
         serializedVersion: 2
         x: 0
         y: 16
         width: 34
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -135,15 +135,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JumpPad_Pressed
+      name: JumpPad_Default
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 34
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -172,8 +172,8 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":34.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      JumpPad_Default: 1989016671
-      JumpPad_Pressed: -234168231
+      JumpPad_Default: -234168231
+      JumpPad_Triggered: 1989016671
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

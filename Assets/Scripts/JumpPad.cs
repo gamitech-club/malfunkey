@@ -1,18 +1,22 @@
+using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(Animator))]
 public class JumpPad : MonoBehaviour
 {
-    public float baseBounceForce = 20f;
-    public float velocityMultiplier = 1f;
-    public float delayBeforeBounce = 0.15f;
+    public SpriteRenderer spriteRenderer;
+    public float baseBouncePower = 20f;
+    public float fallSpeedMultiplier = 1f;
+    public float delayBeforeResetSprite = 0.2f;
+    public Sprite triggeredSprite;
 
     private Animator animator;
-    private bool isBouncing = false;
+    private Sprite defaultSprite;
+    private bool isBouncing;
     
     void Start()
     {
         animator = GetComponent<Animator>();
+        defaultSprite = spriteRenderer.sprite;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -26,20 +30,17 @@ public class JumpPad : MonoBehaviour
         }
     }
 
-    private System.Collections.IEnumerator BounceAfterStretch(Rigidbody2D rb)
+    private IEnumerator BounceAfterStretch(Rigidbody2D rb)
     {
     	isBouncing = true;
-    	animator.SetTrigger("Stretch");
-
-    	yield return new WaitForSeconds(delayBeforeBounce);
+        spriteRenderer.sprite = triggeredSprite;
 
     	float fallSpeed = Mathf.Abs(rb.linearVelocity.y);
-    	float bouncePower = baseBounceForce + (fallSpeed * velocityMultiplier);
+    	float bouncePower = Mathf.Max(baseBouncePower, baseBouncePower + fallSpeed * fallSpeedMultiplier);
+    	rb.linearVelocityY = bouncePower;
 
-    	rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
-    	rb.AddForce(Vector2.up * bouncePower, ForceMode2D.Impulse);
-
+    	yield return new WaitForSeconds(delayBeforeResetSprite);
     	isBouncing = false;
-    	
+        spriteRenderer.sprite = defaultSprite;
 	}
 }
