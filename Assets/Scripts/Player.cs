@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
 
     public event Action Jumped;
     public event Action Landed;
+    public event Action Pounded;
 
     public Rigidbody2D Rigidbody => _rb;
     public Vector2 MoveInput => _moveInput;
@@ -211,6 +212,8 @@ public class Player : MonoBehaviour
 
         if (_poundAvailable > 0 && !_isInCharging)
             _poundAvailable--;
+        
+        Pounded?.Invoke();
     }
 
     private void ResetPound()
