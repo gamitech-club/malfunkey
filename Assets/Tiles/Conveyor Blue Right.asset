@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: Conveyor Blue Right
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -2286301108559704402, guid: 0abf96074c1e017448cd29a3509029ba, type: 3}
+  - {fileID: -4870038735247925261, guid: e35740eeb065fd5419a8afa69db9d308, type: 3}
+  - {fileID: -4115641794435929964, guid: 674c76e9cb5ef1a42823fb4c096e59a0, type: 3}
+  - {fileID: 703038974500332797, guid: f67bbdf6245e81b48a42d49282c6f074, type: 3}
+  m_MinSpeed: 8
+  m_MaxSpeed: 8
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 2
+  m_TileAnimationFlags: 0

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: Conveyor Orange Right
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -3173730366748566371, guid: b210df6d03eb53d4e95b371c526d5b2d, type: 3}
+  - {fileID: 3765018080633391083, guid: 1173ae4dd8178024b9d000be48e8e975, type: 3}
+  - {fileID: -3454144348076102020, guid: f7080d5ce9b3bb845aaa11dc7a73b36a, type: 3}
+  - {fileID: 2347951156319913948, guid: f4dea2b3292f11848be94d0848912cf6, type: 3}
+  m_MinSpeed: 8
+  m_MaxSpeed: 8
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 2
+  m_TileAnimationFlags: 0

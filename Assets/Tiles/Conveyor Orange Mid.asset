@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: Conveyor Orange Mid
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -4172730130784307010, guid: 6ea3bf62e16a97347b474a66ece946ae, type: 3}
+  - {fileID: 4320725091614291275, guid: ae3da29684d8bf640bea68e2ec53cf48, type: 3}
+  - {fileID: -3149955150080603571, guid: 449ac52c1b83b904285596e444774a7e, type: 3}
+  - {fileID: -7354584908552290529, guid: 6840a08729ad7e3418af94da1acb12c2, type: 3}
+  m_MinSpeed: 8
+  m_MaxSpeed: 8
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 2
+  m_TileAnimationFlags: 0
