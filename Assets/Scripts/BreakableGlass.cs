@@ -57,6 +57,9 @@ public class BreakableGlass : MonoBehaviour
             _fxBreak.transform.SetParent(null);
             _fxBreak.Play();
 
+            // Cam shake
+            Camera2D.Current.AddShake(.1f, 1f, .4f);
+
             Destroy(gameObject);
         }
     }
