@@ -133,13 +133,13 @@ public class Player : MonoBehaviour
 
     private void OnGUI()
     {
-        #if UNITY_EDITOR
-        GUI.contentColor = Color.white;
-        GUILayout.Label($"Vel: {_rb.linearVelocity} | Speed: {_rb.linearVelocity.magnitude}");
-        GUILayout.Label($"Move Input: {_moveInput.x} | {Mathf.Abs(_rb.linearVelocityX) > _maxSpeed}");
-        GUILayout.Label($"Left: {_leftKeyAvailable} | Right: {_rightKeyAvailable}");
-        GUILayout.Label($"Jump: {_jumpAvailable} | Pound: {_poundAvailable}");
-        #endif
+        // #if UNITY_EDITOR
+        // GUI.contentColor = Color.white;
+        // GUILayout.Label($"Vel: {_rb.linearVelocity} | Speed: {_rb.linearVelocity.magnitude}");
+        // GUILayout.Label($"Move Input: {_moveInput.x} | {Mathf.Abs(_rb.linearVelocityX) > _maxSpeed}");
+        // GUILayout.Label($"Left: {_leftKeyAvailable} | Right: {_rightKeyAvailable}");
+        // GUILayout.Label($"Jump: {_jumpAvailable} | Pound: {_poundAvailable}");
+        // #endif
     }
 
     private void HandleInput()
