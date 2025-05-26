@@ -36,6 +36,13 @@ public class Portal : MonoBehaviour
     private void GoToNextLevel()
     {
         int nextScene = SceneManager.GetActiveScene().buildIndex + 1;
+
+        // if last level, go back to main menu
+        if (nextScene >= SceneManager.sceneCountInBuildSettings)
+        {
+            nextScene = 0;
+        }
+        
         TransitionManager.Instance().Transition(nextScene, _transitionSettings, 0f);
     }
 }
