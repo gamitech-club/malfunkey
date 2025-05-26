@@ -2790,7 +2790,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 10.81, y: 2.5}
-  m_SizeDelta: {x: 5, y: 5}
+  m_SizeDelta: {x: 6.51, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &327547589
 MonoBehaviour:
@@ -2812,7 +2812,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Use bottom key to plunge and straight to the platform
+  m_text: Use bottom key to plunge and goes straight to the platform
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6562b64979509134f8317fce0b99ed7c, type: 2}
   m_sharedMaterial: {fileID: -1850041248560175260, guid: 6562b64979509134f8317fce0b99ed7c, type: 2}
