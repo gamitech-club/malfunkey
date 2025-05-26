@@ -184,6 +184,13 @@ public class Player : MonoBehaviour
             if (_poundAvailable == -1 || _poundAvailable > 0)
                 Pound();
         }
+
+        // Restart
+        if (Keyboard.current.rKey.wasPressedThisFrame && !TransitionManager.Instance().IsTransitioning)
+        {
+            int scene = SceneManager.GetActiveScene().buildIndex;
+            TransitionManager.Instance().Transition(scene, _loseTransition, 0);
+        }
     }
 
     private void HandleGroundCheck()
