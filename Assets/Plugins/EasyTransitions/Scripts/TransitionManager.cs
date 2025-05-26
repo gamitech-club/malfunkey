@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
@@ -11,14 +10,17 @@ namespace EasyTransition
     {        
         [SerializeField] private GameObject transitionTemplate;
 
+        public bool IsTransitioning => runningTransition;
+
+        public UnityAction<int> onTransitionBegin_BuildIndex;
+        public UnityAction<string> onTransitionBegin_SceneName;
+
         public UnityAction onTransitionBegin;
         public UnityAction onTransitionCutPointReached;
         public UnityAction onTransitionEnd;
-        public bool IsTransitioning => runningTransition;
-
-        private bool runningTransition;
 
         private static TransitionManager instance;
+        private bool runningTransition;
 
         private void Awake()
         {
@@ -28,8 +30,12 @@ namespace EasyTransition
         public static TransitionManager Instance()
         {
             if (instance == null)
-                Debug.LogError("You tried to access the instance before it exists.");
-
+            {
+                instance = FindFirstObjectByType<TransitionManager>();
+                if (instance == null)
+                    Debug.LogError($"{nameof(TransitionManager)} not found in the scene.");
+            }
+            
             return instance;
         }
 
@@ -38,7 +44,7 @@ namespace EasyTransition
         /// </summary>
         /// <param name="transition">The settings of the transition you want to use.</param>
         /// <param name="startDelay">The delay before the transition starts.</param>
-        public void Transition(TransitionSettings transition, float startDelay)
+        public void Transition(Scene scene, TransitionSettings transition, float startDelay)
         {
             if (transition == null || runningTransition)
             {
@@ -60,7 +66,7 @@ namespace EasyTransition
         {
             if (transition == null || runningTransition)
             {
-                Debug.LogError("You have to assing a transition.");
+                Debug.LogError("You have to assgn a transition.");
                 return;
             }
 
@@ -76,7 +82,10 @@ namespace EasyTransition
         /// <param name="startDelay">The delay before the transition starts.</param>
         public void Transition(int sceneIndex, TransitionSettings transition, float startDelay)
         {
-            if (transition == null || runningTransition)
+            if (runningTransition)
+                return;
+                
+            if (transition == null)
             {
                 Debug.LogError("You have to assing a transition.");
                 return;
@@ -99,6 +108,7 @@ namespace EasyTransition
         {
             yield return new WaitForSecondsRealtime(startDelay);
 
+            onTransitionBegin_SceneName?.Invoke(sceneName);
             onTransitionBegin?.Invoke();
 
             GameObject template = Instantiate(transitionTemplate) as GameObject;
@@ -124,6 +134,7 @@ namespace EasyTransition
         {
             yield return new WaitForSecondsRealtime(startDelay);
 
+            onTransitionBegin_BuildIndex?.Invoke(sceneIndex);
             onTransitionBegin?.Invoke();
 
             GameObject template = Instantiate(transitionTemplate) as GameObject;
@@ -174,8 +185,8 @@ namespace EasyTransition
         {
             while (this.gameObject.activeInHierarchy)
             {
-                //Check for multiple instances of the Transition Manager component
-                var managerCount = GameObject.FindObjectsOfType<TransitionManager>(true).Length;
+                // Check for multiple instances of the Transition Manager component
+                var managerCount = FindObjectsByType<TransitionManager>(FindObjectsInactive.Include, FindObjectsSortMode.None).Length;
                 if (managerCount > 1)
                     Debug.LogError($"There are {managerCount.ToString()} Transition Managers in your scene. Please ensure there is only one Transition Manager in your scene or overlapping transitions may occur.");
             

@@ -331,6 +331,10 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0.6509804
       objectReference: {fileID: 0}
+    - target: {fileID: 6450494519514486044, guid: 3bf86432fb9a4e04c90ba35e13203ede, type: 3}
+      propertyPath: _music.Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: e99b2dbcb8ab8114796e8df530e3d495, type: 3}
     - target: {fileID: 8477755479126910445, guid: 3bf86432fb9a4e04c90ba35e13203ede, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.15
