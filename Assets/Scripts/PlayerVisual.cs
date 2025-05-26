@@ -51,6 +51,9 @@ public class PlayerVisual : MonoBehaviour
         _player.Jumped += OnJumped;
         _player.Landed += OnLanded;
         _player.Pounded += OnPounded;
+
+        if (PauseMenu.Instance)
+            PauseMenu.Instance.PauseStateChanged += OnPauseStateChanged;
     }
 
     private void OnDisable()
@@ -58,6 +61,9 @@ public class PlayerVisual : MonoBehaviour
         _player.Jumped -= OnJumped;
         _player.Landed -= OnLanded;
         _player.Pounded -= OnPounded;
+
+        if (PauseMenu.Instance)
+            PauseMenu.Instance.PauseStateChanged -= OnPauseStateChanged;
     }
 
     private void Update()
@@ -111,7 +117,6 @@ public class PlayerVisual : MonoBehaviour
     {
         float volume = Mathf.InverseLerp(0, _player.MaxSpeed, Mathf.Abs(_rb.linearVelocityX));
         _sfxWalk.volume = volume;
-        SetPlayWalkSFX(_state == AnimState.Walk);
     }
 
     private void HandleFallSFX()
@@ -150,25 +155,17 @@ public class PlayerVisual : MonoBehaviour
         }
 
         if (state == AnimState.Walk)
+        {
+            _sfxWalk.Play();
             _fxWalk.Play();
+        }
         else
+        {
+            _sfxWalk.Stop();
             _fxWalk.Stop();
+        }
 
         _state = state;
-    }
-
-    private void SetPlayWalkSFX(bool play)
-    {
-        if (play)
-        {
-            if (!_sfxWalk.isPlaying)
-                _sfxWalk.Play();
-        }
-        else
-        {
-            if (_sfxWalk.isPlaying)
-                _sfxWalk.Stop();
-        }
     }
 
     private void OnJumped()
@@ -198,5 +195,17 @@ public class PlayerVisual : MonoBehaviour
     private void OnPounded()
     {
         _sfxPound.Play();
+    }
+
+    private void OnPauseStateChanged()
+    {
+        if (PauseMenu.Instance.IsPaused)
+        {
+            _sfxWalk.Pause();
+        }
+        else
+        {
+            _sfxWalk.UnPause();
+        }
     }
 }
