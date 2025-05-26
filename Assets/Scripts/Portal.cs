@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using EditorAttributes;
 using EasyTransition;
 using DG.Tweening;
 
 public class Portal : MonoBehaviour
 {
-    [SerializeField] private TransitionSettings _transitionSettings;
+    [SerializeField, Required] private TransitionSettings _transitionSettings;
+    [SerializeField, Required] private AudioSource _sfxEnter;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -20,10 +22,13 @@ public class Portal : MonoBehaviour
         var otherTransform = other.transform;
         other.enabled = false;
 
+        _sfxEnter.Play();
+
         DOTween.Sequence()
             .Append(otherTransform.DOMove(transform.position, .8f))
             .Join(otherTransform.DOLocalRotate(new(0, 0, 360f), .8f, RotateMode.FastBeyond360))
             .Join(otherTransform.DOScale(Mathf.Epsilon, .8f))
+            .AppendInterval(.7f)
             .OnComplete(GoToNextLevel)
             .SetLink(gameObject);
     }
